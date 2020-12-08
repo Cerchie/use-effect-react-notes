@@ -4,6 +4,7 @@ import Counter from './Counter'
 import ProfileViewer from './ProfileViewer'
 import Video from './Video'
 import Focuser from './Focuser'
+import Timer2 from './Timer2'
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Counter />
       <ProfileViewer /> */}
       {/* <Video/> */}
-      <Focuser/>
+      {/* <Focuser/> */}
+      <Timer2/>
     </div>
   );
 }
