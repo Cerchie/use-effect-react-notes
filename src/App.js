@@ -1,6 +1,7 @@
 
 import Timer from './Timer'
 import Counter from './Counter'
+import ProfileViewer from './ProfileViewer'
 
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
     <div className="App">
       <Timer />
       <Counter />
+      <ProfileViewer name="Matt"/>
+      <ProfileViewer name="Cerchie"/>
     </div>
   );
 }
