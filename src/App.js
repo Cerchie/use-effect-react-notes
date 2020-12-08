@@ -1,5 +1,5 @@
 
-import Timer from './Timer'
+import TimerWrapper from './TimerWrapper'
 import Counter from './Counter'
 import ProfileViewer from './ProfileViewer'
 
@@ -7,7 +7,7 @@ import ProfileViewer from './ProfileViewer'
 function App() {
   return (
     <div className="App">
-      <Timer />
+      <TimerWrapper />
       <Counter />
       <ProfileViewer />
     </div>
