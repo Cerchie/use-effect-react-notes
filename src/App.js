@@ -9,8 +9,7 @@ function App() {
     <div className="App">
       <Timer />
       <Counter />
-      <ProfileViewer name="Matt"/>
-      <ProfileViewer name="Cerchie"/>
+      <ProfileViewer />
     </div>
   );
 }

@@ -1,18 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-
+import ProfileSearchForm from './ProfileSearchForm'
 //"https://api.github.com/users/elie"
 
-const ProfileViewer = ({name}) => {
-    const [data, setData] = useState(null);
-    useEffect(()=>{
+const ProfileViewer = ({name = 'Elie'}) => {
+    const [profile, setProfile] = useState(null)
+    const [url, setUrl] = useState("https://api.github.com/users/elie");
+
+    const search = term => {
+        setUrl(`https://api.github.com/users/${term}`)
+    }
+    useEffect(()=> {
+        console.log('loading data')
         async function loadProfile(){
-            const res =await axios.get(`https://api.github.com/users/${name}`)
-            setData(res.data.name)
+            const res = await axios.get(url);
+            setProfile(res.data)
         } loadProfile();
-    }, [name]);
-    return (
-    <h3>{data ? data : 'loading...'}</h3>
-    )
-};
+        return () => console.log('cleaning up')
+    }, [url])
+ return (
+     <div>
+         {profile ? <h1> Hi {profile.name}</h1> : <h1>Loading...</h1>}
+        <ProfileSearchForm search={search}/>
+     </div>
+ )   
+}
 export default ProfileViewer;
